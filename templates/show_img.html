@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name="viewport" charset="UTF-8" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/rusultstyle.css">
+</head>
+<body style="text-align:center">
+<form action="/show/" method="post" class="smart-green">
+    <h1>瓷soso在线查询系统
+        <span style="font-size: 15px;">查询结果</span>
+    </h1>
+    <div style="text-align:center; margin-bottom: 10px;width: 100%;height: 100%">
+        <a href="{% url 'getquery' %}" style="Text-decoration:none; font-size: 16px; display: block; margin-top: 20px">继续查询</a>
+        <p style="font-size: 14px"> {{ t }}</p>
+         {% for i in search_results %}
+             <div style="margin: 10px auto">
+             <img src="{{ i.result_id }}" width="300px" style="margin-bottom: 10px"><br/>
+             <p style="margin-top: 10px">{{ i.result_desc }}</p>
+             <a href="{{ i.result_url }}" >物品购买地址</a>
+             <hr>
+             </div>
+         {% endfor %}
+
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Title</title>
+</head>
+<body>
+    <div style="text-align:center; width: 100%;height: 100%">
+        <a href="{% url 'getquery' %}" style="Text-decoration:none; font-size: 26px; display: block; color: #419641; position:relative;top:10px;left: 2px;" >点此开始查询</a>
+        <h1 style="color: #7abc2c">热搜排行榜</h1>
+        <ol style="display: inline-block">
+         {% for i in rsb %}
+             <li><img src="{{ i.image }}" width="200px"><br><a href="{{ i.urladdress }}" style="text-decoration: none; font-size: 20px; color: #7abc2c">详细信息</a><br><p style="font-size: 16px; color: #b8b8b8;">已被查询{{ i.number }}次</p></li>
+         {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>

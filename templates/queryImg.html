@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/querystyle.css">
+</head>
+<body>
+<div class="result">
+    <form enctype="multipart/form-data" action="/query/" method="POST" class="smart-green" >
+        <h1>瓷soso在线查询系统
+            <span>提交你想查询的图片</span>
+        </h1>
+        <label>
+            <span>图片 :</span>
+            <input name="q_img" class="query" type="file" required="required"/>
+            <input type="submit" text="Go" />
+        </label>
+        {% csrf_token %}
+        <a href="{% url 'getrsb' %}" style="text-decoration: none; color: #7abc2c; margin-top: 30px; display: inline-block">点击查看热搜排行榜</a>
+    </form>
+</div>
+</body>
+</html>
